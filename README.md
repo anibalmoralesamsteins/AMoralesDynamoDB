@@ -1,0 +1,15 @@
+- instalar serverless mediante "npm install -g serverless"
+- se ejecuta el comando "serverless" para inicializar con el template de aws-python-starter
+- nombrar el proyecto "AMoralesDynamoDB"
+- instalar plugin sls offline mediante "npm install serverless-offline --save-dev"
+- instalar plugin sls dynamodb local mediante "npm install serverless-dynamodb-local --save-dev"
+- instalar dynamod db mediante el comando "serverless dynamodb install"
+- copiar archivos handler.py y serverless.yml en nuevo proyecto
+- crear nuevo ambiente virtual meidante el comando "python -m venv pyenv"
+- activar el ambiente mediante el comando ".\pyenv\Scripts.\activate"
+- instalar librearias boto3 y requests mediante el comando "pip install boto3, requests"
+- ejecutar "serverless dynamodb start" en una consola aparte para iniciar el servicio de dynamodb
+- ejecutar "serverless offline" en consola para iniciar proyecto serverless
+- acceder a http://localhost:3000/dev/create para crear la tabla dolar en dynamodb
+- los insert se hacen segun el schedule de serverless.yml (puede ser modificado de "rate(1 day)" a "rate(1 minute)" para comprobar
+- acceder a http://localhost:3000/dev/listar para traer la lista de insert realizados

@@ -1,0 +1,35 @@
+service: AMoralesDynamoDB
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  create:
+    handler: handler.create
+    events: 
+      - http:
+          path: create
+          method: get
+  listar:
+    handler: handler.listar
+    events: 
+      - http:
+          path: listar
+          method: get
+  cron:
+    handler: handler.insert
+    events:
+      # Invoke Lambda function every minute
+      - schedule: rate(1 day)
+
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+
+custom:
+  dynamodb:
+    stages:
+      - dev
